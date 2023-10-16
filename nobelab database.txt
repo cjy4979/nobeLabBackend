@@ -1,0 +1,218 @@
+CREATE TABLE `displaytext_cn` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`text` LONGTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `displaytext_en` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`text` LONGTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `graduated_cn` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`uid` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`graduatedYear` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`graduatedSchool` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`major` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`graduationDestination` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`name` CHAR(50) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci',
+	`imgpath` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`eduQualification` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	PRIMARY KEY (`uid`) USING BTREE,
+	INDEX `id` (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `graduated_en` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`uid` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`graduatedYear` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`graduatedSchool` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`major` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`graduationDestination` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`name` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`imgpath` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`eduQualification` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	PRIMARY KEY (`uid`) USING BTREE,
+	INDEX `id` (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `images` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`picId` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`name_cn` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`name_en` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`path` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`imageName` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`type` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`isShow` INT(11) NOT NULL DEFAULT '1',
+	PRIMARY KEY (`picId`) USING BTREE,
+	INDEX `id` (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `news_cn` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`paperId` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`title` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`text` LONGTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`paperId`) USING BTREE,
+	INDEX `id` (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `news_en` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`paperId` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`title` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`text` LONGTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`paperId`) USING BTREE,
+	INDEX `id` (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `recruit_cn` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`title` TINYTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`text` LONGTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`type` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	PRIMARY KEY (`type`) USING BTREE,
+	INDEX `id` (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `recruit_en` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`title` TINYTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`text` LONGTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`type` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	PRIMARY KEY (`type`) USING BTREE,
+	INDEX `id` (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+
+CREATE TABLE `students_cn` (
+	`key` INT(11) NOT NULL AUTO_INCREMENT,
+	`uid` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`name` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`eduQualification` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`hobby` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`researchDirection` TINYTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`year` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`graduatedSchool` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`imgpath` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	PRIMARY KEY (`uid`) USING BTREE,
+	INDEX `key` (`key`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `students_en` (
+	`key` INT(11) NOT NULL AUTO_INCREMENT,
+	`uid` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`name` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`eduQualification` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`hobby` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`researchDirection` TINYTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`year` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`graduatedSchool` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`imgpath` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	PRIMARY KEY (`uid`) USING BTREE,
+	INDEX `key` (`key`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `teachers_cn` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`uid` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`name` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`proTitle` TINYTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`title` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`education` TINYTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`researchDirection` TINYTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`email` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`imgpath` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`introDetail` LONGTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	PRIMARY KEY (`uid`) USING BTREE,
+	INDEX `id` (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `teachers_en` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`uid` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`name` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`proTitle` TINYTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`title` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`education` TINYTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`researchDirection` TINYTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	`email` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`imgpath` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`introDetail` LONGTEXT NOT NULL COLLATE 'utf8_unicode_ci',
+	PRIMARY KEY (`uid`) USING BTREE,
+	INDEX `id` (`id`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `users` (
+	`key` INT(11) NOT NULL AUTO_INCREMENT,
+	`username` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`password` CHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	PRIMARY KEY (`key`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1
+;
