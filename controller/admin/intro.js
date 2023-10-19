@@ -129,7 +129,7 @@ exports.addIntroImages = async (req, res, next) => {
 exports.updateIntroImages = async (req, res, next) => {
     try {
         const data = req.body
-        const sql = `UPDATE images SET ? WHERE picId = ${req.body.picId}`
+        const sql = `UPDATE images SET ? WHERE picId = '${req.body.picId}'`
         const sqlData = await queryData(sql, data)
         return res.status(200).send({
             stauts: 200,
@@ -146,7 +146,7 @@ exports.updateIntroImages = async (req, res, next) => {
 //删除图片
 exports.deleteIntroImages = async (req, res, next) => {
     try {
-        const sql = `DELETE FROM images WHERE picId = ${req.query.picId}`
+        const sql = `DELETE FROM images WHERE picId = '${req.query.picId}'`
         await query(sql)
         res.status(200).send({
             status: 200,
